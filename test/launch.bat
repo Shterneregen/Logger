@@ -1,2 +1,2 @@
-java -jar logger.jar .\log.txt
+java -jar listener.jar .\log.txt
 pause

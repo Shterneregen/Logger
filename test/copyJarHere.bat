@@ -1,2 +1,2 @@
-echo f | xcopy /y ..\build\libs\logger.jar .\logger.jar
+echo f | xcopy /y ..\build\libs\listener.jar .\listener.jar
 REM pause

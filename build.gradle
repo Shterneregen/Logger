@@ -15,7 +15,7 @@ dependencies {
 }
 
 jar {
-    baseName = 'logger'
+    baseName = 'listener'
 
     manifest {
         attributes(
