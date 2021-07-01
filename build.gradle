@@ -6,21 +6,21 @@ plugins {
 mainClassName = 'random.Main'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 
 dependencies {
-    compile "com.1stleg:jnativehook:2.1.0"
+    implementation "com.1stleg:jnativehook:2.1.0"
 }
 
 jar {
-    baseName = 'listener'
+    archiveFileName = 'listener.jar'
 
     manifest {
         attributes(
-                'Class-Path': configurations.compileClasspath.files.collect { "$it.name" }.join(' '),
-                'Main-Class': 'random.Main'
+                "Class-Path": configurations.compileClasspath.files.collect { "$it.name" }.join(" "),
+                "Main-Class": "random.Main"
         )
     }
 

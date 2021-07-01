@@ -12,6 +12,7 @@ nb-configuration.xml
 .nb-gradle/
 out/
 .gradle/
+!gradle-wrapper.jar
 
 # IntelliJ project files 
 *.iml
